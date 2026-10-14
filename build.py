@@ -184,7 +184,7 @@ def spotlight(p):
         for i, (art, label) in enumerate(GENDERS)
     )
     links = "".join(
-        f'<a class="btn btn-light" href="{attr(l["url"])}" target="_blank" rel="noopener">{escape(l["label"])} {ICONS["external"]}</a>'
+        f'<a class="btn btn-silk" href="{attr(l["url"])}" target="_blank" rel="noopener">{escape(l["label"])} {ICONS["external"]}</a>'
         for l in p.get("links", [])
     )
     return f"""<section id="projects" class="spotlight" aria-labelledby="spotlight-title">

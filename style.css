@@ -213,6 +213,33 @@ svg { width: 1em; height: 1em; flex: none; }
 .btn-primary:hover { background: #FFC24D; }
 .btn-light { color: #F3F5FB; border-color: rgb(255 255 255 / 40%); }
 .btn-light:hover { background: rgb(255 255 255 / 10%); border-color: #fff; }
+/* Silk button: the four gender colours flow around the edge; a light streak passes every few seconds
+   and the edge brightens as it does. Hover lights the button up a little. */
+@property --silk-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+.btn-silk {
+  --silk-fill: #071A52;
+  position: relative; overflow: hidden; isolation: isolate;
+  color: #F3F5FB; border: 2px solid transparent;
+  background:
+    linear-gradient(var(--silk-fill), var(--silk-fill)) padding-box,
+    conic-gradient(from var(--silk-angle), var(--cf-der), var(--cf-die), var(--cf-das), var(--cf-pl), var(--cf-der)) border-box;
+  animation: silk-spin 4s linear infinite, silk-flash 3.2s ease-in-out infinite;
+  transition: box-shadow .25s ease, color .25s ease;
+}
+.btn-silk::after {
+  content: ""; position: absolute; inset: -2px; z-index: -1; pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgb(255 255 255 / 40%) 50%, transparent 65%);
+  transform: translateX(-120%);
+  animation: silk-sweep 3.2s ease-in-out infinite;
+}
+.btn-silk:hover { --silk-fill: #10307F; color: #fff; box-shadow: 0 0 14px rgb(120 160 255 / 35%); }
+@keyframes silk-spin { to { --silk-angle: 360deg; } }
+@keyframes silk-sweep { 0%, 55% { transform: translateX(-120%); } 85%, 100% { transform: translateX(120%); } }
+@keyframes silk-flash { 0%, 60%, 100% { filter: brightness(1); } 72% { filter: brightness(1.6); } }
+@media (prefers-reduced-motion: reduce) {
+  .btn-silk { animation: none; }
+  .btn-silk::after { animation: none; display: none; }
+}
 .spotlight-media {
   display: block; border-radius: 14px; overflow: hidden;
   box-shadow: 0 20px 50px rgb(0 0 0 / 45%), 0 0 0 1px rgb(255 255 255 / 8%);
