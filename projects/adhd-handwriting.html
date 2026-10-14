@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADHD Detection from Handwriting in Children with ASD · Seyed Ali Padash Sotoodeh</title>
+<meta name="description" content="Reproduced a published handwriting study and extended it with a classifier ensemble. Found that the original evaluation leaked each child&#x27;s drawings into training, and measured the real accuracy: about 78%, not 93%.">
+<meta name="author" content="Seyed Ali Padash Sotoodeh">
+<meta property="og:title" content="ADHD Detection from Handwriting in Children with ASD · Seyed Ali Padash Sotoodeh">
+<meta property="og:description" content="Reproduced a published handwriting study and extended it with a classifier ensemble. Found that the original evaluation leaked each child&#x27;s drawings into training, and measured the real accuracy: about 78%, not 93%.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ali-padash.github.io/projects/adhd-handwriting.html">
+<link rel="canonical" href="https://ali-padash.github.io/projects/adhd-handwriting.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23012D6A'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EAP%3C/text%3E%3C/svg%3E">
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Slab:wght@500;700&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a><header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html"><span class="brand-full">Seyed Ali Padash Sotoodeh</span><span class="brand-short">Padash Sotoodeh</span></a>
+    <nav class="topnav" aria-label="Main">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></g></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg></button>
+    
+  </div>
+</header>
+<main id="main" class="wrap project">
+  <a class="back" href="../index.html#projects"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6 6-6-6 6-6"/></svg>All projects</a>
+  <header class="project-head">
+    <p class="eyebrow">Course project</p>
+    <h1>ADHD Detection from Handwriting in Children with ASD</h1>
+    <p class="lead">Reproduced a published handwriting study and extended it with a classifier ensemble. Found that the original evaluation leaked each child's drawings into training, and measured the real accuracy: about 78%, not 93%.</p>
+    <dl class="facts"><div><dt>When</dt><dd>Sep 2023 – Jan 2024</dd></div><div><dt>Course</dt><dd>Research and Presentation Methods</dd></div><div><dt>Course grade</dt><dd>20 / 20</dd></div><div><dt>Team</dt><dd>With M. M. Naseri (co-author)</dd></div></dl>
+    <ul class="tags"><li>Python</li><li>scikit-learn</li><li>Ensemble learning</li><li>Cross-validation</li><li>Data leakage</li></ul>
+    
+  </header>
+  <figure class="hero hero-diagram"><svg viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg" class="diagram" role="img" aria-labelledby="adhd-t">
+  <title id="adhd-t">Accuracy of the original study's best model (Random Forest) under three evaluations: 93.1% when leaving one drawing out, as published; 77.0% when leaving one child out; 78.2% when feature selection and tuning are also kept inside each fold; the majority class alone gives 51.7%</title>
+  <text class="d-label" x="20" y="24">Original study's best model (Random Forest), 29 children · 87 drawings</text>
+  <!-- scale: 0% → x=250, 100% → x=610 (3.6 px per point) -->
+  <g class="d-grid">
+    <line x1="250" y1="40" x2="250" y2="214"/><line x1="340" y1="40" x2="340" y2="214"/>
+    <line x1="430" y1="40" x2="430" y2="214"/><line x1="520" y1="40" x2="520" y2="214"/>
+    <line x1="610" y1="40" x2="610" y2="214"/>
+  </g>
+  <g class="d-small d-muted">
+    <text x="250" y="232" text-anchor="middle">0%</text><text x="340" y="232" text-anchor="middle">25%</text>
+    <text x="430" y="232" text-anchor="middle">50%</text><text x="520" y="232" text-anchor="middle">75%</text>
+    <text x="610" y="232" text-anchor="middle">100%</text>
+  </g>
+  <text class="d-label" x="238" y="62" text-anchor="end">Leave one drawing out</text>
+  <text class="d-small d-muted" x="238" y="78" text-anchor="end">as published</text>
+  <rect class="d-bar d-bar-soft" x="250" y="50" width="335" height="30" rx="3"/>
+  <text class="d-small d-onbar" x="577" y="70" text-anchor="end">93.1%</text>
+
+  <text class="d-label" x="238" y="117" text-anchor="end">Leave one child out</text>
+  <text class="d-small d-muted" x="238" y="133" text-anchor="end">features still chosen on all data</text>
+  <rect class="d-bar d-bar-soft" x="250" y="105" width="277" height="30" rx="3"/>
+  <text class="d-small d-onbar" x="519" y="125" text-anchor="end">77.0%</text>
+
+  <text class="d-label" x="238" y="172" text-anchor="end">Child out + nested selection</text>
+  <text class="d-small d-muted" x="238" y="188" text-anchor="end">honest estimate</text>
+  <rect class="d-bar" x="250" y="160" width="282" height="30" rx="3"/>
+  <text class="d-small d-onbar" x="524" y="180" text-anchor="end">78.2%</text>
+
+  <line class="d-wire d-dash d-accent-line" x1="436" y1="40" x2="436" y2="214"/>
+  <text class="d-small d-accent-text" x="440" y="210">majority class 51.7%</text>
+</svg>
+</figure>
+  <div class="prose">
+    <h2>Overview</h2>
+    <p>Spotting ADHD in children who also have autism spectrum disorder (ASD) is difficult. A study published in IEEE Access (2023) recorded 29 Japanese children (14 with ADHD and ASD, 15 typically developing) drawing zigzag and periodic lines on a digital tablet, three times each, and classified them from pen features. The authors published their data and code, and our course project built on them.</p>
+    <h2>What I did</h2>
+    <ul><li>Reproduced the original pipeline: z-score standardisation, Sequential Forward Floating Search (SFFS) for feature selection, and the seven original classifiers (SVM, Random Forest, Decision Tree, Gaussian Naive Bayes, KNN, Logistic Regression, Extra Trees).</li><li>Tried four more classifiers (Gradient Boosting, AdaBoost, MLP, Ridge), each tuned with grid search. None beat the original models.</li><li>Combined models across the four drawing tasks by majority vote.</li><li>Wrote the work up as an IEEE-style paper with a co-author.</li></ul>
+    <h2>What I found</h2><ul class="results"><li>The leak: each child drew every pattern three times. The released code tests one drawing at a time (leave-one-out over all 87 drawings), so the same child's other two drawings stay in the training data, and a model can recognise the child instead of learning signs of ADHD. The paper describes holding out whole subjects, but the code holds out single drawings.</li><li>The honest number: holding out all three drawings of a child together, with feature selection and tuning kept inside each fold, the original study's best model scores 78% per drawing and 86% per child, against the reported 93.1%. Always guessing the larger group gives 52%.</li><li>Under the same per-child evaluation, combining models did not beat the best single model.</li><li>Handwriting still carries a real signal, well above chance; the published figure overstates it.</li><li>Lesson: when one person contributes several samples, test on people the model has never seen, and keep every choice (features, settings, which models to combine) away from the test data.</li></ul>
+    <p class="note">Written as practice for a credited course; not published. The per-child re-evaluation was done in 2026 and checked independently.</p>
+  </div>
+  <h2>Gallery</h2><div class="gallery"><figure class="shot fig-contain"><a href="../img/adhd-handwriting/tasks.webp" target="_blank" rel="noopener"><img src="../img/adhd-handwriting/tasks.webp" alt="Examples of the zigzag task and the periodic-line task" loading="lazy" decoding="async"></a><figcaption>The two drawing patterns: zigzag and periodic line (PL). Each was traced and predicted.</figcaption></figure><figure class="shot fig-contain"><a href="../img/adhd-handwriting/classifiers.webp" target="_blank" rel="noopener"><img src="../img/adhd-handwriting/classifiers.webp" alt="Illustrations of six classifiers: k-nearest neighbours, random forest, linear regression, decision tree, Gaussian naive Bayes and SVM" loading="lazy" decoding="async"></a><figcaption>The classifier families of the original study (figure from our paper).</figcaption></figure></div>
+  <nav class="pager" aria-label="More projects"><a class="pager-prev" href="crack-segmentation.html" rel="prev"><span class="pager-label">Previous</span><span class="pager-title">Asphalt Crack Segmentation</span></a><a class="pager-next" href="omegle-clone.html" rel="next"><span class="pager-label">Next</span><span class="pager-title">Omegle Clone</span></a></nav>
+</main>
+<footer class="footer">
+  <div class="wrap">© 2026 Seyed Ali Padash Sotoodeh</div>
+</footer>
+<script src="../theme.js"></script>
+</body>
+</html>

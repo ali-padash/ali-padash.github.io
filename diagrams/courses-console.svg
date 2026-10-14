@@ -1,0 +1,19 @@
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" class="diagram" role="img" aria-labelledby="crs-t">
+  <title id="crs-t">A terminal window showing prompts from the course platform: creating a question with a type, level and automatically corrected answer</title>
+  <rect x="20" y="16" width="600" height="268" rx="10" fill="#0E1726" stroke="#24334D"/>
+  <rect x="20" y="16" width="600" height="30" rx="10" fill="#18243A"/><rect x="20" y="36" width="600" height="10" fill="#18243A"/>
+  <circle cx="42" cy="31" r="5" fill="#E8605A"/><circle cx="60" cy="31" r="5" fill="#E6B84C"/><circle cx="78" cy="31" r="5" fill="#5DBB63"/>
+  <text x="320" y="35" text-anchor="middle" style="fill:#9BA6B4" font-size="12" font-family="Consolas, monospace">courses — java -jar</text>
+  <g font-family="Consolas, 'Courier New', monospace" font-size="13.5">
+    <text x="40" y="74" style="fill:#6CC5CF">Choose question level:</text>
+    <text x="40" y="94" style="fill:#E2E7EE">1.easy 2.medium</text>
+    <text x="40" y="114" style="fill:#E2E7EE">3.hard 4.very hard</text>
+    <text x="40" y="134" style="fill:#FFB020">&gt; 3</text>
+    <text x="40" y="164" style="fill:#6CC5CF">Choose question type:</text>
+    <text x="40" y="184" style="fill:#E2E7EE">1.blank 2.descriptive</text>
+    <text x="40" y="204" style="fill:#E2E7EE">3.short answer 4.test</text>
+    <text x="40" y="224" style="fill:#FFB020">&gt; 4</text>
+    <text x="40" y="254" style="fill:#6CC5CF">set a correct answer for this question (1 - 4) [automatic correction]:</text>
+    <text x="40" y="274" style="fill:#FFB020">&gt; 2<tspan style="fill:#E2E7EE">▍</tspan></text>
+  </g>
+</svg>

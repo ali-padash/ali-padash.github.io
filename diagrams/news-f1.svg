@@ -1,0 +1,25 @@
+<svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" class="diagram" role="img" aria-labelledby="f1-t">
+  <title id="f1-t">Per-topic F1 scores of the voting ensemble on 2,083 held-out articles: international 0.88, politics 0.87, provinces 0.86, economy 0.78, social 0.77, culture, sport and science 0.73; macro average 0.82</title>
+  <text class="d-label" x="20" y="24">F1 per topic · voting ensemble · 2,083 held-out articles</text>
+  <!-- scale: 0 → x=200, 1.0 → x=600 (400 px) -->
+  <g class="d-grid">
+    <line x1="200" y1="40" x2="200" y2="226"/><line x1="300" y1="40" x2="300" y2="226"/>
+    <line x1="400" y1="40" x2="400" y2="226"/><line x1="500" y1="40" x2="500" y2="226"/>
+    <line x1="600" y1="40" x2="600" y2="226"/>
+  </g>
+  <g class="d-small d-muted">
+    <text x="200" y="244" text-anchor="middle">0</text><text x="300" y="244" text-anchor="middle">0.25</text>
+    <text x="400" y="244" text-anchor="middle">0.5</text><text x="500" y="244" text-anchor="middle">0.75</text>
+    <text x="600" y="244" text-anchor="middle">1</text>
+  </g>
+  <g class="d-bars">
+    <text class="d-label" x="190" y="61" text-anchor="end">International</text><rect class="d-bar" x="200" y="46" width="352" height="22" rx="3"/><text class="d-small" x="632" y="61" text-anchor="end">0.88</text>
+    <text class="d-label" x="190" y="91" text-anchor="end">Politics</text><rect class="d-bar" x="200" y="76" width="348" height="22" rx="3"/><text class="d-small" x="632" y="91" text-anchor="end">0.87</text>
+    <text class="d-label" x="190" y="121" text-anchor="end">Provinces</text><rect class="d-bar" x="200" y="106" width="344" height="22" rx="3"/><text class="d-small" x="632" y="121" text-anchor="end">0.86</text>
+    <text class="d-label" x="190" y="151" text-anchor="end">Economy</text><rect class="d-bar" x="200" y="136" width="312" height="22" rx="3"/><text class="d-small" x="632" y="151" text-anchor="end">0.78</text>
+    <text class="d-label" x="190" y="181" text-anchor="end">Social</text><rect class="d-bar" x="200" y="166" width="308" height="22" rx="3"/><text class="d-small" x="632" y="181" text-anchor="end">0.77</text>
+    <text class="d-label" x="190" y="211" text-anchor="end">Culture, sport, science</text><rect class="d-bar" x="200" y="196" width="292" height="22" rx="3"/><text class="d-small" x="632" y="211" text-anchor="end">0.73</text>
+  </g>
+  <line class="d-wire d-dash d-accent-line" x1="528" y1="38" x2="528" y2="226"/>
+  <text class="d-small d-accent-text" x="524" y="36" text-anchor="end">macro 0.82</text>
+</svg>

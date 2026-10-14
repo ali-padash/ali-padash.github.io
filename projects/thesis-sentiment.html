@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouTube Comment Sentiment Analysis · Seyed Ali Padash Sotoodeh</title>
+<meta name="description" content="How far can lightweight classifiers get against a large transformer? Classic models improved with lexicon features and weak supervision, plus an app that analyses any video&#x27;s comments.">
+<meta name="author" content="Seyed Ali Padash Sotoodeh">
+<meta property="og:title" content="YouTube Comment Sentiment Analysis · Seyed Ali Padash Sotoodeh">
+<meta property="og:description" content="How far can lightweight classifiers get against a large transformer? Classic models improved with lexicon features and weak supervision, plus an app that analyses any video&#x27;s comments.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ali-padash.github.io/projects/thesis-sentiment.html">
+<link rel="canonical" href="https://ali-padash.github.io/projects/thesis-sentiment.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23012D6A'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EAP%3C/text%3E%3C/svg%3E">
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Slab:wght@500;700&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a><header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html"><span class="brand-full">Seyed Ali Padash Sotoodeh</span><span class="brand-short">Padash Sotoodeh</span></a>
+    <nav class="topnav" aria-label="Main">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></g></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg></button>
+    
+  </div>
+</header>
+<main id="main" class="wrap project">
+  <a class="back" href="../index.html#projects"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6 6-6-6 6-6"/></svg>All projects</a>
+  <header class="project-head">
+    <p class="eyebrow">Featured project</p>
+    <h1>YouTube Comment Sentiment Analysis</h1>
+    <p class="lead">How far can lightweight classifiers get against a large transformer? Classic models improved with lexicon features and weak supervision, plus an app that analyses any video's comments.</p>
+    <dl class="facts"><div><dt>When</dt><dd>Jun – Oct 2025</dd></div><div><dt>Course</dt><dd>BSc thesis, K. N. Toosi University of Technology</dd></div><div><dt>Thesis grade</dt><dd>19.5 / 20</dd></div></dl>
+    <ul class="tags"><li>Python</li><li>scikit-learn</li><li>Hugging Face Transformers</li><li>VADER</li><li>Streamlit</li><li>YouTube Data API</li></ul>
+    <div class="project-links"><a class="btn btn-ghost" href="https://github.com/ali-padash/youtube-comment-sentiment-analysis" target="_blank" rel="noopener">Code on GitHub <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6m0-6-9 9M18 14v6H4V6h6"/></svg></a></div>
+  </header>
+  <figure class="hero fig-contain"><a href="../img/thesis-sentiment/output3.webp" target="_blank" rel="noopener"><img src="../img/thesis-sentiment/output3.webp" alt="Results tab of the app with sentiment counts and a pie chart of the distribution" loading="lazy" decoding="async"></a><figcaption>Results for one video: sentiment counts, distribution, and how often the hybrid model handed over to RoBERTa.</figcaption></figure>
+  <div class="prose">
+    <h2>Overview</h2>
+    <p>Three-class sentiment analysis (positive, neutral, negative) of social-media comments. Transformer models are accurate but heavy; the thesis asks how close cheap classic models can come, and which kind of extra data helps them most.</p>
+    <h2>What I did</h2>
+    <ul><li>Built a preprocessing pipeline: URL and mention normalisation, emojis converted to text, lemmatisation, and VADER sentiment-lexicon features.</li><li>Collected extra YouTube comments with the YouTube Data API v3 and pseudo-labelled them with Twitter-RoBERTa (weak supervision). Also tested paraphrase-based augmentation with Gemma 3.</li><li>Trained Logistic Regression and Linear SVM classifiers with the added VADER features and weakly supervised data.</li><li>Built a Streamlit app that fetches up to 5,000 comments from a video or reads a CSV, runs several models side by side, and shows sentiment charts, agreement with RoBERTa and confusion matrices. A hybrid mode uses the fast model and only falls back to RoBERTa when its confidence is low.</li></ul>
+    <h2>Results</h2><ul class="results"><li>Macro F1 rose from 66.4% (Logistic Regression) and 65.1% (Linear SVM) to about 72.2%.</li><li>Weak supervision helped more than paraphrase augmentation.</li><li>Reference point: Twitter-RoBERTa reaches 88.9% macro F1 on the same task.</li></ul>
+    
+  </div>
+  <h2>Gallery</h2><div class="gallery"><figure class="shot"><a href="../img/thesis-sentiment/output4.webp" target="_blank" rel="noopener"><img src="../img/thesis-sentiment/output4.webp" alt="Table of comments with predicted sentiment, confidence bars and the model that decided" loading="lazy" decoding="async"></a><figcaption>Per-comment output with confidence and the model that made each decision.</figcaption></figure><figure class="shot"><a href="../img/thesis-sentiment/output1.webp" target="_blank" rel="noopener"><img src="../img/thesis-sentiment/output1.webp" alt="Data input panel of the YouTube Sentiment Analyzer app" loading="lazy" decoding="async"></a><figcaption>Input: YouTube API, CSV upload or plain text.</figcaption></figure><figure class="shot"><a href="../img/thesis-sentiment/diagram.webp" target="_blank" rel="noopener"><img src="../img/thesis-sentiment/diagram.webp" alt="Flowchart of the system from data input through preprocessing and models to output" loading="lazy" decoding="async"></a><figcaption>How the system works, from input to downloadable results.</figcaption></figure></div>
+  <nav class="pager" aria-label="More projects"><span></span><a class="pager-next" href="chamflick.html" rel="next"><span class="pager-label">Next</span><span class="pager-title">ChamFlick DE</span></a></nav>
+</main>
+<footer class="footer">
+  <div class="wrap">© 2026 Seyed Ali Padash Sotoodeh</div>
+</footer>
+<script src="../theme.js"></script>
+</body>
+</html>
