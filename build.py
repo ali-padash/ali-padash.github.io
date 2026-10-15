@@ -158,13 +158,11 @@ def card(p):
 
 
 def minor_row(p):
-    g = grade_text(p)
-    grade = f'<span class="grade">{g}</span>' if g else ""
     tags = "".join(f"<li>{escape(t)}</li>" for t in p["tags"])
     return f"""<details class="minor" id="{p['slug']}">
   <summary>
     <span class="minor-title">{escape(p['title'])}</span>
-    <span class="minor-meta">{escape(p['course'])} · {p['when']} {grade}</span>
+    <span class="minor-meta">{escape(p['course'])} · {p['when']}</span>
   </summary>
   <div class="minor-body">
     <p>{p['details']}</p>
