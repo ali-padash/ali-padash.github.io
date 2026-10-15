@@ -21,7 +21,7 @@
       "tier": 1,
       "kind": "BSc thesis",
       "title": "YouTube Comment Sentiment Analysis",
-      "summary": "How far can lightweight classifiers get against a large transformer? Classic models improved with lexicon features and weak supervision, plus an app that analyses any video's comments.",
+      "summary": "How closely can lightweight classifiers imitate a large transformer? Classic models improved with lexicon features and weak supervision, plus an app that analyses any video's comments.",
       "when": "Jun – Oct 2025",
       "course": "BSc thesis, K. N. Toosi University of Technology",
       "grade": 19.5,
@@ -40,23 +40,22 @@
           "url": "https://github.com/ali-padash/youtube-comment-sentiment-analysis"
         }
       ],
-      "overview": "Three-class sentiment analysis (positive, neutral, negative) of social-media comments. Transformer models are accurate but heavy; the thesis asks how close cheap classic models can come, and which kind of extra data helps them most.",
+      "overview": "Three-class sentiment analysis (positive, neutral, negative) of social-media comments. Transformer models such as Twitter-RoBERTa are strong but heavy; the thesis asks how closely cheap classic models can imitate one, and which kind of extra data helps them most.",
       "did": [
         "Built a preprocessing pipeline: URL and mention normalisation, emojis converted to text, lemmatisation, and VADER sentiment-lexicon features.",
         "Collected extra YouTube comments with the YouTube Data API v3 and pseudo-labelled them with Twitter-RoBERTa (weak supervision). Also tested paraphrase-based augmentation with Gemma 3.",
         "Trained Logistic Regression and Linear SVM classifiers with the added VADER features and weakly supervised data.",
-        "Built a Streamlit app that fetches up to 5,000 comments from a video or reads a CSV, runs several models side by side, and shows sentiment charts, agreement with RoBERTa and confusion matrices. A hybrid mode uses the fast model and only falls back to RoBERTa when its confidence is low."
+        "Built a Streamlit app that fetches up to 5,000 comments from a video or reads a CSV, runs several models side by side, and shows sentiment charts, agreement with Twitter-RoBERTa and confusion matrices. A hybrid mode uses the fast model and only falls back to Twitter-RoBERTa when its confidence is low."
       ],
       "results": [
-        "Macro F1 rose from 66.4% (Logistic Regression) and 65.1% (Linear SVM) to about 72.2%.",
-        "Weak supervision helped more than paraphrase augmentation.",
-        "Reference point: Twitter-RoBERTa reaches 88.9% macro F1 on the same task."
+        "Macro F1 against Twitter-RoBERTa's labels rose from 66.4% (Logistic Regression) and 65.1% (Linear SVM) to about 72.2%.",
+        "Weak supervision helped more than paraphrase augmentation."
       ],
       "images": [
         {
           "src": "img/thesis-sentiment/output3.webp",
           "alt": "Results tab of the app with sentiment counts and a pie chart of the distribution",
-          "caption": "Results for one video: sentiment counts, distribution, and how often the hybrid model handed over to RoBERTa.",
+          "caption": "Results for one video: sentiment counts, distribution, and how often the hybrid model handed over to Twitter-RoBERTa.",
           "fit": "contain"
         },
         {
