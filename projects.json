@@ -102,7 +102,7 @@
       "did": [
         "Tap any word in a PDF, EPUB, scanned page or live film subtitle to open a dictionary card with its meaning, grammar and pronunciation. Scanned books are read with OCR.",
         "Every noun is coloured by gender (der / die / das / plural) in text and subtitles. A sentence parser resolves ambiguous words such as Band or Messer, and nouns it is unsure about stay uncoloured instead of being guessed.",
-        "German-specific look-ups: split verbs (a tap on fügte opens hinzufügen) and compound words (Apfelbaum → Apfel + Baum).",
+        "German-specific look-ups: separable verbs are rejoined (in “fügte … hinzu”, a tap on fügte opens hinzufügen) and compound words are split (Apfelbaum → Apfel + Baum).",
         "Everything runs on the phone: no account and no internet connection."
       ],
       "images": [
@@ -128,8 +128,8 @@
         },
         {
           "src": "img/chamflick/split-verbs.webp",
-          "alt": "A tap on fügte opens the card for hinzufügen",
-          "caption": "Split verbs: fügte … hinzu leads to hinzufügen."
+          "alt": "In a sentence with fügte … hinzu, a tap on fügte opens the card for hinzufügen",
+          "caption": "Separable verbs: fügte … hinzu leads to hinzufügen."
         },
         {
           "src": "img/chamflick/scans.webp",
@@ -142,7 +142,7 @@
         "pitch": "Read German books and watch German films with the dictionary built in. Tap any word for its meaning, grammar and pronunciation, and see every noun's gender at a glance.",
         "points": [
           "Works in PDFs, EPUBs, scanned pages (OCR) and live film subtitles",
-          "A German sentence parser handles ambiguous nouns, split verbs and compound words",
+          "A German sentence parser handles ambiguous nouns, separable verbs and compound words",
           "Runs fully on the phone: no account, no internet"
         ],
         "image": {

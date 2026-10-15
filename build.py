@@ -86,7 +86,7 @@ def cv_button(prefix):
     """The Download CV button, left out until the CV file has been added."""
     if not os.path.exists(os.path.join(ROOT, SITE["cv"])):
         return ""
-    return f"""<a class="btn btn-cv" href="{prefix}{SITE['cv']}" download>{ICONS['download']}<span>Download CV</span></a>"""
+    return f"""<a class="btn btn-cv" href="{prefix}{SITE['cv']}" download="Padash_Sotoodeh_CV.pdf">{ICONS['download']}<span>Download CV</span></a>"""
 
 
 def topbar(prefix):
