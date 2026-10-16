@@ -6,7 +6,7 @@
     "tagline": "Computer Engineering graduate · K. N. Toosi University of Technology",
     "about": [
       "I hold a BSc in Computer Engineering from K. N. Toosi University of Technology (GPA 18.37 / 20) and am applying for a Master's degree in Germany.",
-      "My work moves between artificial intelligence and software: a thesis on sentiment analysis of YouTube comments, an offline app for reading German books and films, and full-stack systems. As Head Teaching Assistant at Sejong University, I led six TAs producing machine-learning course material."
+      "I work on language technology and the software around it: a thesis on sentiment analysis of YouTube comments, an offline Android app for learning German from books and film subtitles, and full-stack web apps. As remote Head Teaching Assistant at Sejong University, I led six TAs producing course material for <em>Machine Learning</em> and <em>Mathematics for Deep Learning</em>."
     ],
     "github": "https://github.com/ali-padash",
     "linkedin": "https://www.linkedin.com/in/alipadash/",
@@ -327,6 +327,45 @@
           "fit": "contain"
         }
       ]
+    },
+    {
+      "slug": "imdb-clone",
+      "tier": 2,
+      "kind": "Course project",
+      "title": "IMDb Clone",
+      "summary": "A movie catalogue with a dark poster grid and detail pages, backed by a REST API with JWT sign-in and poster uploads.",
+      "when": "Fall 2024",
+      "course": "Internet Engineering",
+      "grade": 19.7,
+      "tags": [
+        "Node.js",
+        "Express",
+        "EJS",
+        "JWT",
+        "PostgreSQL",
+        "Sequelize",
+        "Multer"
+      ],
+      "overview": "A small IMDb-style site built as an Internet Engineering assignment: a server-rendered front end for browsing films and a JSON API for managing them.",
+      "did": [
+        "Express backend split into models, controllers, routes and middleware, with PostgreSQL through the Sequelize ORM for users and movies.",
+        "Sign-up and login with bcrypt-hashed passwords and JSON Web Tokens; a middleware checks the token before any change to the catalogue.",
+        "REST endpoints to add, edit and delete movies, with poster uploads handled by Multer; users can only edit or delete the movies they added.",
+        "Server-rendered EJS pages: a poster grid with hover effects and a details page for each film, in a dark theme."
+      ],
+      "images": [
+        {
+          "src": "img/imdb-clone/home.webp",
+          "alt": "Dark home page titled IMDB Clone with a grid of ten classic film posters and their titles",
+          "caption": "The home page: a grid of posters, each linking to its film."
+        },
+        {
+          "src": "img/imdb-clone/details.webp",
+          "alt": "Details page for Charade (1963) with the poster on the left and a description on the right",
+          "caption": "A film's details page."
+        }
+      ],
+      "note": "The screenshots were taken from a local run with public-domain posters from <a href=\"https://commons.wikimedia.org/\">Wikimedia Commons</a>; the descriptions were written for the demo."
     },
     {
       "slug": "verilog-cpu",
