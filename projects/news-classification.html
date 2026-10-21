@@ -72,7 +72,7 @@
     <p>News sites tag their articles with about 100 fine-grained labels. The task: predict an article's topic from its title and text.</p>
     <h2>What I did</h2>
     <ul><li>Mapped the roughly 100 site tags onto six topics: social, economy, provinces, international, politics, and culture / sport / science.</li><li>Cleaned Persian text with Hazm (normalisation, tokenisation, stemming, stop-word removal) and stripped HTML entities, links and digits. Titles were given extra weight by repeating them before the body.</li><li>Soft-voting ensemble of SVM, XGBoost and Logistic Regression on 1–3-gram counts.</li><li>A second model: TF-IDF features (7,500 terms, 1–3-grams) feeding a small Keras MLP with dropout and early stopping.</li></ul>
-    <h2>Results</h2><ul class="results"><li>On a held-out 20% split (2,083 articles): 84% accuracy and macro F1 0.82 for the voting ensemble.</li><li>85.1% accuracy (weighted F1 0.846) for the TF-IDF + MLP model.</li><li>Per-topic F1 ranged from 0.73 (culture, sport and science) to 0.88 (international).</li></ul>
+    <h2>Results</h2><ul class="results"><li>On a held-out 20% split (2,083 articles): 84% accuracy and macro F1 0.82 for the voting ensemble.</li><li>85.1% accuracy (weighted F1 0.846) for the TF-IDF + MLP model.</li><li>Per-topic F1 ranged from 0.73 (culture, sport and science) to 0.88 (international).</li><li>On the instructor's hidden test set of 1,000 articles: 88.7% accuracy, the 2nd-best of 18 submissions.</li></ul>
     
   </div>
   

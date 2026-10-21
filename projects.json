@@ -453,7 +453,8 @@
       "results": [
         "On a held-out 20% split (2,083 articles): 84% accuracy and macro F1 0.82 for the voting ensemble.",
         "85.1% accuracy (weighted F1 0.846) for the TF-IDF + MLP model.",
-        "Per-topic F1 ranged from 0.73 (culture, sport and science) to 0.88 (international)."
+        "Per-topic F1 ranged from 0.73 (culture, sport and science) to 0.88 (international).",
+        "On the instructor's hidden test set of 1,000 articles: 88.7% accuracy, the 2nd-best of 18 submissions."
       ],
       "images": []
     },
