@@ -86,6 +86,7 @@
       "grade": null,
       "tags": [
         "Kotlin",
+        "C++",
         "Android",
         "NLP",
         "OCR",
@@ -100,7 +101,7 @@
       "overview": "Reading German books and watching German films is the best practice, but constant dictionary look-ups break the flow. ChamFlick puts the dictionary inside the page and the subtitles.",
       "did": [
         "Tap any word in a PDF, EPUB, scanned page or live film subtitle to open a dictionary card with its meaning, grammar and pronunciation. Scanned books are read with OCR.",
-        "Every noun is coloured by gender (der / die / das / plural) in text and subtitles. A sentence parser resolves ambiguous words such as Band or Messer, and nouns it is unsure about stay uncoloured instead of being guessed.",
+        "Every noun is coloured by gender (der / die / das / plural) in text and subtitles. A sentence parser (spaCy's German parser, reimplemented in C++ to run on the phone) resolves ambiguous words such as Band or Messer, and nouns it is unsure about stay uncoloured instead of being guessed.",
         "German-specific look-ups: separable verbs are rejoined (in “fügte … hinzu”, a tap on fügte opens hinzufügen) and compound words are split (Apfelbaum → Apfel + Baum).",
         "Everything runs on the phone: no account and no internet connection."
       ],
