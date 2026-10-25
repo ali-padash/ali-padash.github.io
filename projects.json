@@ -1,0 +1,722 @@
+{
+  "site": {
+    "name": "Seyed Ali Padash Sotoodeh",
+    "short_name": "Padash Sotoodeh",
+    "url": "https://ali-padash.github.io",
+    "tagline": "Computer Engineering graduate · K. N. Toosi University of Technology",
+    "about": [
+      "I hold a BSc in Computer Engineering from K. N. Toosi University of Technology (GPA 18.37 / 20) and am applying for a Master's degree in Germany.",
+      "I work on language technology and the software around it: a thesis on sentiment analysis of YouTube comments, an offline Android app for learning German from books and film subtitles, and full-stack web apps. As remote Head Teaching Assistant at Sejong University, I led six TAs producing course material for <em>Machine Learning</em> and <em>Mathematics for Deep Learning</em>."
+    ],
+    "github": "https://github.com/ali-padash",
+    "linkedin": "https://www.linkedin.com/in/alipadash/",
+    "email_user": "a.padash.sotoodeh",
+    "email_domain": "gmail.com",
+    "cv": "cv.pdf",
+    "year": 2026
+  },
+  "projects": [
+    {
+      "slug": "thesis-sentiment",
+      "tier": 1,
+      "kind": "BSc thesis",
+      "title": "YouTube Comment Sentiment Analysis",
+      "summary": "How far can lightweight classifiers go against heavy transformers? Classic models improved with lexicon features and weak supervision, plus an app that analyses any video's comments.",
+      "when": "Jun – Oct 2025",
+      "course": "BSc thesis, K. N. Toosi University of Technology",
+      "grade": 19.5,
+      "grade_label": "Thesis grade",
+      "tags": [
+        "Python",
+        "scikit-learn",
+        "Hugging Face Transformers",
+        "VADER",
+        "Streamlit",
+        "YouTube Data API"
+      ],
+      "links": [
+        {
+          "label": "Code on GitHub",
+          "url": "https://github.com/ali-padash/youtube-comment-sentiment-analysis"
+        }
+      ],
+      "overview": "Three-class sentiment analysis (positive, neutral, negative) of social-media comments. Transformer models such as Twitter-RoBERTa are strong but heavy; the thesis asks how far cheap classic models can be improved, and which kind of extra data helps them most.",
+      "did": [
+        "Built a preprocessing pipeline: URL and mention normalisation, emojis converted to text, lemmatisation, and VADER sentiment-lexicon features.",
+        "Collected extra YouTube comments with the YouTube Data API v3 and pseudo-labelled them with Twitter-RoBERTa (weak supervision). Also tested paraphrase-based augmentation with Gemma 3.",
+        "Trained Logistic Regression and Linear SVM classifiers with the added VADER features and weakly supervised data.",
+        "Built a Streamlit app that fetches up to 5,000 comments from a video or reads a CSV, runs several models side by side, and shows sentiment charts, agreement with Twitter-RoBERTa and confusion matrices. A hybrid mode uses the fast model and only falls back to Twitter-RoBERTa when its confidence is low."
+      ],
+      "results": [
+        "Macro F1 on the original labelled test data rose from 66.4% (Logistic Regression) and 65.1% (Linear SVM) to about 72.2%.",
+        "Weak supervision helped more than paraphrase augmentation."
+      ],
+      "images": [
+        {
+          "src": "img/thesis-sentiment/output3.webp",
+          "alt": "Results tab of the app with sentiment counts and a pie chart of the distribution",
+          "caption": "Results for one video: sentiment counts, distribution, and how often the hybrid model handed over to Twitter-RoBERTa.",
+          "fit": "contain"
+        },
+        {
+          "src": "img/thesis-sentiment/output4.webp",
+          "alt": "Table of comments with predicted sentiment, confidence bars and the model that decided",
+          "caption": "Per-comment output with confidence and the model that made each decision."
+        },
+        {
+          "src": "img/thesis-sentiment/output1.webp",
+          "alt": "Data input panel of the YouTube Sentiment Analyzer app",
+          "caption": "Input: YouTube API, CSV upload or plain text."
+        },
+        {
+          "src": "img/thesis-sentiment/diagram.webp",
+          "alt": "Flowchart of the system from data input through preprocessing and models to output",
+          "caption": "How the system works, from input to downloadable results."
+        }
+      ]
+    },
+    {
+      "slug": "chamflick",
+      "tier": 1,
+      "kind": "Personal project",
+      "title": "ChamFlick DE",
+      "summary": "An offline Android app for learning German from real books and films: tap any word for meaning, grammar and pronunciation, with every noun coloured by its gender.",
+      "when": "Aug 2026 – present",
+      "course": null,
+      "grade": null,
+      "tags": [
+        "Kotlin",
+        "C++",
+        "Android",
+        "NLP",
+        "OCR",
+        "On-device"
+      ],
+      "links": [
+        {
+          "label": "Project showcase",
+          "url": "https://ali-padash.github.io/chamflick-showcase/"
+        }
+      ],
+      "overview": "Reading German books and watching German films is the best practice, but constant dictionary look-ups break the flow. ChamFlick puts the dictionary inside the page and the subtitles.",
+      "did": [
+        "Tap any word in a PDF, EPUB, scanned page or live film subtitle to open a dictionary card with its meaning, grammar and pronunciation. Scanned books are read with OCR.",
+        "Every noun is coloured by gender (der / die / das / plural) in text and subtitles. A sentence parser (spaCy's German parser, reimplemented in C++ to run on the phone) resolves ambiguous words such as Band or Messer, and nouns it is unsure about stay uncoloured instead of being guessed.",
+        "German-specific look-ups: separable verbs are rejoined (in “fügte … hinzu”, a tap on fügte opens hinzufügen) and compound words are split (Apfelbaum → Apfel + Baum).",
+        "Everything runs on the phone: no account and no internet connection."
+      ],
+      "images": [
+        {
+          "src": "img/chamflick/reading.webp",
+          "alt": "A page of Der kleine Prinz with its nouns in blue, pink, green and orange",
+          "caption": "Reading Der kleine Prinz with every noun coloured by gender."
+        },
+        {
+          "src": "img/chamflick/three-genders.webp",
+          "alt": "Die Band, das Band, der Band: the same word in pink, green and blue",
+          "caption": "One word, three genders: the parser decides from the sentence."
+        },
+        {
+          "src": "img/chamflick/subtitle-card.webp",
+          "alt": "The film paused with a dictionary card for der Zauberer open over it",
+          "caption": "Tap a subtitle word and the film waits."
+        },
+        {
+          "src": "img/chamflick/dictionary.webp",
+          "alt": "A dictionary card for der Apfelbaum, taken apart into Apfel and Baum",
+          "caption": "Compounds taken apart on the dictionary card."
+        },
+        {
+          "src": "img/chamflick/split-verbs.webp",
+          "alt": "In a sentence with fügte … hinzu, a tap on fügte opens the card for hinzufügen",
+          "caption": "Separable verbs: fügte … hinzu leads to hinzufügen."
+        },
+        {
+          "src": "img/chamflick/scans.webp",
+          "alt": "A scanned page of Der Froschkönig with the printed nouns recoloured in the ink itself",
+          "caption": "Scanned books are read with OCR and recoloured."
+        }
+      ],
+      "spotlight": {
+        "eyebrow": "Current project · Android",
+        "pitch": "Read German books and watch German films with the dictionary built in. Tap any word for its meaning, grammar and pronunciation, and see every noun's gender at a glance.",
+        "points": [
+          "Works in PDFs, EPUBs, scanned pages (OCR) and live film subtitles",
+          "A German sentence parser handles ambiguous nouns, separable verbs and compound words",
+          "Runs fully on the phone: no account, no internet"
+        ],
+        "image": {
+          "src": "img/chamflick/reading.webp",
+          "alt": "A page of Der kleine Prinz with its nouns in blue, pink, green and orange"
+        }
+      }
+    },
+    {
+      "slug": "rahi",
+      "tier": 1,
+      "kind": "Personal project",
+      "title": "Rahi: Bus Ticket Reservation System",
+      "summary": "A bilingual (English / Persian) bus booking site with a Go API that can never sell the same seat twice. Built in 2024, extended in 2026.",
+      "when": "Mar – May 2024 · extended Oct 2026",
+      "course": null,
+      "grade": null,
+      "tags": [
+        "Go",
+        "Gin",
+        "GORM",
+        "PostgreSQL",
+        "React",
+        "TypeScript",
+        "i18next",
+        "Docker",
+        "GitHub Actions"
+      ],
+      "links": [
+        {
+          "label": "Code on GitHub",
+          "url": "https://github.com/ali-padash/bus-ticket-reservation-system"
+        }
+      ],
+      "overview": "A practice project modelled on Safar724, an Iranian intercity bus booking site: search trips, pick seats on a drawing of the bus, enter passengers and receive a ticket. It is not affiliated with Safar724 and the payment page is a demo.",
+      "did": [
+        "Layered Go REST API (Gin, GORM) on PostgreSQL with numbered SQL migrations; web, service and store layers that each only know the layer below.",
+        "No double sales: each booking runs in one transaction that locks the chosen seat rows in a fixed order (SELECT … FOR UPDATE) so bookings cannot deadlock, and a partial unique index makes the database itself refuse a second sale.",
+        "Seats are held for 10 minutes while the buyer reviews and pays, and released if they do not.",
+        "React + TypeScript frontend: search state in the URL, city autocomplete over 915 cities, seat maps drawn from each bus type's floor plan, and English (left-to-right) and Persian (right-to-left) with Persian digits and calendar. Checked at 360–480 px phone widths.",
+        "GitHub Actions CI and Docker Compose for the local database."
+      ],
+      "results": [
+        "Concurrency tests against a real PostgreSQL: 20 buyers request the same seat at the same moment and exactly one gets it.",
+        "24 buyers with overlapping seat choices all finish without a deadlock."
+      ],
+      "images": [
+        {
+          "src": "img/rahi/results-en.webp",
+          "alt": "Search results with the seat map of one trip opened",
+          "caption": "Search results with one trip's seat map opened."
+        },
+        {
+          "src": "img/rahi/erd.webp",
+          "alt": "Entity-relationship diagram of the Rahi database: users, tickets, passengers, seats, services, midway cities, refund rules, bus types, companies, terminals, cities and search expressions",
+          "caption": "The database: 12 PostgreSQL tables (open the image for full size).",
+          "fit": "contain"
+        },
+        {
+          "src": "img/rahi/seats-en.webp",
+          "alt": "The seat selection step with two seats chosen",
+          "caption": "Choosing seats on a drawing of the bus."
+        },
+        {
+          "src": "img/rahi/ticket-en.webp",
+          "alt": "The issued ticket with its code",
+          "caption": "The issued ticket and its 12-digit code."
+        },
+        {
+          "src": "img/rahi/phone-en.webp",
+          "alt": "Home, results, seat choice and ticket pages at phone width",
+          "caption": "The booking flow at phone width."
+        },
+        {
+          "src": "img/rahi/results-fa.webp",
+          "alt": "Search results in Persian, right-to-left",
+          "caption": "The same site in Persian, right-to-left."
+        }
+      ]
+    },
+    {
+      "slug": "news-classification",
+      "tier": 2,
+      "kind": "Course project",
+      "title": "Persian News Topic Classification",
+      "summary": "Classifying about 12,500 Persian news articles into six topics with an n-gram voting ensemble and a TF-IDF neural network.",
+      "when": "Spring 2024",
+      "course": "Artificial Intelligence and Expert Systems",
+      "grade": 19.89,
+      "tags": [
+        "Python",
+        "scikit-learn",
+        "XGBoost",
+        "Keras",
+        "Hazm",
+        "Persian NLP"
+      ],
+      "links": [],
+      "diagram": "diagrams/news-f1.svg",
+      "overview": "News sites tag their articles with about 100 fine-grained labels. The task: predict an article's topic from its title and text.",
+      "did": [
+        "Mapped the roughly 100 site tags onto six topics: social, economy, provinces, international, politics, and culture / sport / science.",
+        "Cleaned Persian text with Hazm (normalisation, tokenisation, stemming, stop-word removal) and stripped HTML entities, links and digits. Titles were given extra weight by repeating them before the body.",
+        "Soft-voting ensemble of SVM, XGBoost and Logistic Regression on 1–3-gram counts.",
+        "A second model: TF-IDF features (7,500 terms, 1–3-grams) feeding a small Keras MLP with dropout and early stopping."
+      ],
+      "results": [
+        "On a held-out 20% split (2,083 articles): 84% accuracy and macro F1 0.82 for the voting ensemble.",
+        "85.1% accuracy (weighted F1 0.846) for the TF-IDF + MLP model.",
+        "Per-topic F1 ranged from 0.73 (culture, sport and science) to 0.88 (international).",
+        "On the instructor's hidden test set of 1,000 articles: 88.7% accuracy, the 2nd-best of 18 submissions."
+      ],
+      "images": []
+    },
+    {
+      "slug": "omegle-clone",
+      "tier": 2,
+      "kind": "Course project",
+      "title": "Omegle Clone",
+      "summary": "Real-time anonymous text and video chat: random partner matching, rooms joinable by ID, and peer-to-peer video over WebRTC.",
+      "when": "Fall 2024",
+      "course": "Internet Engineering",
+      "grade": 19.7,
+      "team": "Team of two",
+      "tags": [
+        "Node.js",
+        "Express",
+        "Socket.IO",
+        "WebRTC",
+        "PostgreSQL",
+        "Sequelize",
+        "Docker"
+      ],
+      "links": [
+        {
+          "label": "Team repository",
+          "url": "https://github.com/Mm-Naseri/omegle-clone"
+        }
+      ],
+      "overview": "A full-stack clone of Omegle-style random chat, built as the Internet Engineering course project.",
+      "did": [
+        "Node.js and Express backend following MVC (models, controllers, routes, views), with PostgreSQL through the Sequelize ORM for users, meetings, participants and messages.",
+        "Socket.IO for signalling and text chat; WebRTC for peer-to-peer video between matched users.",
+        "Random partner matching, meeting rooms joinable by ID, an option to hide the camera, and a layout that works on phones.",
+        "Served over HTTPS with locally trusted certificates, since browsers only allow camera access on secure origins, and packaged with Docker Compose."
+      ],
+      "images": [
+        {
+          "src": "img/omegle-clone/firstlook.webp",
+          "alt": "Welcome screen of the video chat app with buttons to start or join a meeting",
+          "caption": "Start a random chat or join a meeting."
+        },
+        {
+          "src": "img/omegle-clone/partner.webp",
+          "alt": "Waiting for a partner screen with a progress bar",
+          "caption": "Matching with a random partner."
+        },
+        {
+          "src": "img/omegle-clone/meetingid.webp",
+          "alt": "Form for entering a meeting ID",
+          "caption": "Joining a room by its ID."
+        },
+        {
+          "src": "img/omegle-clone/win-chat.webp",
+          "alt": "Text chat panel with messages from two users",
+          "caption": "Text chat alongside the video.",
+          "fit": "contain"
+        }
+      ]
+    },
+    {
+      "slug": "imdb-clone",
+      "tier": 2,
+      "kind": "Course project",
+      "title": "IMDb Clone",
+      "summary": "A movie catalogue with a dark poster grid and detail pages, backed by a REST API with JWT sign-in and poster uploads.",
+      "when": "Fall 2024",
+      "course": "Internet Engineering",
+      "grade": 19.7,
+      "tags": [
+        "Node.js",
+        "Express",
+        "EJS",
+        "JWT",
+        "PostgreSQL",
+        "Sequelize",
+        "Multer"
+      ],
+      "overview": "A small IMDb-style site built as an Internet Engineering assignment: a server-rendered front end for browsing films and a JSON API for managing them.",
+      "did": [
+        "Express backend split into models, controllers, routes and middleware, with PostgreSQL through the Sequelize ORM for users and movies.",
+        "Sign-up and login with bcrypt-hashed passwords and JSON Web Tokens; a middleware checks the token before any change to the catalogue.",
+        "REST endpoints to add, edit and delete movies, with poster uploads handled by Multer; users can only edit or delete the movies they added.",
+        "Server-rendered EJS pages: a poster grid with hover effects and a details page for each film, in a dark theme."
+      ],
+      "images": [
+        {
+          "src": "img/imdb-clone/home.webp",
+          "alt": "Dark home page titled IMDB Clone with a grid of ten classic film posters and their titles",
+          "caption": "The home page: a grid of posters, each linking to its film."
+        },
+        {
+          "src": "img/imdb-clone/details.webp",
+          "alt": "Details page for Charade (1963) with the poster on the left and a description on the right",
+          "caption": "A film's details page."
+        }
+      ],
+      "note": "The screenshots were taken from a local run with public-domain posters from <a href=\"https://commons.wikimedia.org/\">Wikimedia Commons</a>; the descriptions were written for the demo."
+    },
+    {
+      "slug": "verilog-cpu",
+      "tier": 2,
+      "kind": "Course project",
+      "title": "8-bit Processor in Verilog",
+      "summary": "A small accumulator-based CPU with a hard-wired control unit, designed register by register and simulated in ModelSim.",
+      "when": "Spring 2023",
+      "course": "Computer Architecture",
+      "grade": 19.45,
+      "team": "Team of two",
+      "tags": [
+        "Verilog",
+        "ModelSim",
+        "Digital design"
+      ],
+      "links": [],
+      "diagram": "diagrams/verilog-cpu.svg",
+      "overview": "Designing a working processor from the registers up, in the style of Mano's basic computer.",
+      "did": [
+        "Registers AR and PC (5-bit) and DR, AC, IR, TR and OUTR (8-bit), connected over a shared bus with a select line.",
+        "8-bit instructions: a 3-bit opcode and a 5-bit address into a 32-byte memory; the program is stored in ROM.",
+        "Hard-wired control: a sequence counter and decoders produce timing signals T0–T5 and opcode lines D0–D7, and gate logic turns them into register load, clear and increment signals.",
+        "ALU operations: add, subtract, signed compare (−1 / 0 / 1), shift left, complement, load, and an integer square root.",
+        "Verified in ModelSim by printing the memory contents after each instruction."
+      ],
+      "images": []
+    },
+    {
+      "slug": "go-back-n",
+      "tier": 2,
+      "kind": "Course project",
+      "title": "Reliable Data Transfer over UDP",
+      "summary": "The Go-Back-N sliding-window protocol over a deliberately unreliable channel, with CRC error detection and Hamming codes.",
+      "when": "Spring 2024",
+      "course": "Computer Networks 1",
+      "grade": 20,
+      "team": "Team of two",
+      "tags": [
+        "Python",
+        "Sockets",
+        "UDP",
+        "CRC",
+        "Hamming code",
+        "Threads"
+      ],
+      "links": [],
+      "diagram": "diagrams/go-back-n.svg",
+      "overview": "UDP delivers packets without guarantees. This project rebuilds reliable, in-order delivery on top of it and tests it against a simulated bad network.",
+      "did": [
+        "Python sender and receiver over UDP sockets: 3-bit sequence numbers, a window of four frames, cumulative ACKs, and a timeout that resends the whole window (Go-Back-N).",
+        "CRC with the generator 10011 to detect corrupted frames, and a Hamming code to detect and correct single-bit errors.",
+        "Fault injection: 20% packet loss, 20% lost ACKs and a 1% bit-error rate, to check that the message still arrives intact and in order.",
+        "Threads and a lock so that sending, receiving ACKs and timers run concurrently."
+      ],
+      "images": []
+    },
+    {
+      "slug": "crack-segmentation",
+      "tier": 2,
+      "kind": "Course project",
+      "title": "Asphalt Crack Segmentation",
+      "summary": "Pixel-level crack detection with a U-Net built from scratch in PyTorch, trained on a class-collected dataset of about 2,100 photos, 50 of them taken and labelled by me.",
+      "when": "Spring 2025",
+      "course": "Fundamentals of Computer Vision",
+      "grade": 19.9,
+      "tags": [
+        "Python",
+        "PyTorch",
+        "OpenCV",
+        "Segmentation",
+        "COCO"
+      ],
+      "links": [],
+      "overview": "Finding thin cracks in road surfaces, pixel by pixel: for every pixel, decide whether it belongs to a crack.",
+      "did": [
+        "Photographed 40 cracked and 10 undamaged asphalt surfaces and labelled the cracks as polygons in Roboflow, as my share of a dataset the whole class collected (about 2,100 photos).",
+        "Turned the pooled COCO-format dataset into binary masks and re-split it 70 / 15 / 15 into train, validation and test sets, keeping the share of crack-free images equal in each.",
+        "Built a U-Net-style network in PyTorch from scratch: four encoder levels, a bottleneck and four decoder levels joined by skip connections.",
+        "Trained it for 20 epochs with a combined cross-entropy and Dice loss, and wrote an evaluation that reports IoU and draws the predicted cracks over the photos.",
+        "Wrote augmentation that rotates and scales each photo together with its crack outlines, and a dropout-regularised version of the network."
+      ],
+      "images": [
+        {
+          "src": "img/crack-segmentation/crack-1.webp",
+          "alt": "Photo of a crack running down grey asphalt and branching at the bottom",
+          "caption": "One of the 50 photos I contributed to the class dataset.",
+          "position": "center"
+        },
+        {
+          "src": "img/crack-segmentation/crack-2-label.webp",
+          "alt": "Photo of a branching asphalt crack with its traced label polygon in red",
+          "caption": "My label for one photo: a polygon traced along the crack, including its branch.",
+          "position": "center"
+        },
+        {
+          "src": "img/crack-segmentation/crack-3.webp",
+          "alt": "Photo of a thin crack running diagonally across asphalt",
+          "caption": "Thin cracks are only a few pixels wide.",
+          "position": "center"
+        }
+      ]
+    },
+    {
+      "slug": "bus-platform-design",
+      "tier": 2,
+      "kind": "Course project",
+      "title": "Bus Ticketing Platform: Analysis and Design",
+      "summary": "A full UML design and a clickable Figma prototype for an intercity bus-ticket platform, the same domain I later built in Rahi.",
+      "when": "Spring 2024",
+      "course": "Systems Analysis and Design",
+      "grade": 18.5,
+      "team": "Team of two",
+      "tags": [
+        "UML",
+        "BPMN",
+        "draw.io",
+        "Figma"
+      ],
+      "card_image": {
+        "src": "img/bus-platform-design/proto-results.webp",
+        "alt": "Prototype screen listing trips from Rasht to Tehran with prices and free seats"
+      },
+      "links": [
+        {
+          "label": "Figma prototype",
+          "url": "https://www.figma.com/proto/oHiuK4jGfzCDjl2D4CbkGc/ProtoTypeT?node-id=0-1"
+        }
+      ],
+      "overview": "Analysing and designing a platform where passengers buy intercity bus tickets, bus companies list their trips, and administrators oversee both.",
+      "did": [
+        "BPMN business process, use-case, class, sequence and state diagrams for passengers, bus companies and administrators.",
+        "A class model covering users, companies, buses, journeys, tickets, payments, reviews, discounts and a cargo service, plus external services for OTP login, payments and notifications.",
+        "A clickable Figma prototype of the passenger flow: login, trip search, results, seat selection, passenger details, payment and ticket download."
+      ],
+      "images": [
+        {
+          "src": "img/bus-platform-design/class-diagram.webp",
+          "alt": "UML class diagram with Admin, User, BusCompany, Bus, Journey, Ticket, Payment and related classes",
+          "caption": "Class diagram (open the image for full size).",
+          "fit": "contain"
+        },
+        {
+          "src": "img/bus-platform-design/proto-results.webp",
+          "alt": "Prototype screen listing trips from Rasht to Tehran with prices and free seats",
+          "caption": "Prototype: trip results."
+        },
+        {
+          "src": "img/bus-platform-design/proto-seats.webp",
+          "alt": "Prototype screen with a bus seat map",
+          "caption": "Prototype: choosing a seat."
+        },
+        {
+          "src": "img/bus-platform-design/proto-search.webp",
+          "alt": "Prototype screen for searching tickets by origin, destination and date",
+          "caption": "Prototype: searching for a ticket."
+        },
+        {
+          "src": "img/bus-platform-design/bpmn.webp",
+          "alt": "BPMN diagram of the ticket purchase process",
+          "caption": "BPMN diagram of the purchase process.",
+          "fit": "contain"
+        }
+      ]
+    },
+    {
+      "slug": "course-platform",
+      "tier": 2,
+      "kind": "Course project",
+      "title": "Course and Contest Platform in Java",
+      "summary": "A console platform for classrooms, exercises and timed contests, grown over three course projects to about 3,600 lines of object-oriented Java.",
+      "when": "Spring 2022",
+      "course": "Advanced Programming",
+      "grade": 17.4,
+      "tags": [
+        "Java",
+        "OOP",
+        "Maven",
+        "Serialization"
+      ],
+      "links": [],
+      "diagram": "diagrams/courses-console.svg",
+      "overview": "The main project of Advanced Programming: a Quera-style learning platform built in stages, where each new project extended the previous code base with new requirements.",
+      "did": [
+        "Sign-up and log-in with validated email and national code, and different rights for admins, normal users and guests.",
+        "Classrooms, public or password-protected, with exercises built from four question types (fill-in-the-blank, descriptive, short answer, multiple choice) and four difficulty levels; multiple-choice answers are corrected automatically.",
+        "Timed contests in three kinds (normal, private, special) with groups, invitations and member limits.",
+        "Scoreboards for exercises and contests, exported as HTML tables.",
+        "Final stage: everything admins and users create is saved to files with Java serialization and loaded again on the next start.",
+        "Built with Maven, with Checkstyle and PMD tests required by the course."
+      ],
+      "images": []
+    },
+    {
+      "slug": "cv-labs",
+      "tier": 3,
+      "area": "AI & signals",
+      "title": "Computer Vision labs",
+      "when": "Spring 2025",
+      "course": "Fundamentals of Computer Vision",
+      "grade": 19.9,
+      "details": "Thirteen weekly OpenCV labs: noise models and filtering, histograms and video, thresholding and morphology, template matching and edges, Hough transforms, geometric transformations, Harris and multiscale corners, SIFT matching and RANSAC alignment, and linear and logistic regression from scratch.",
+      "tags": [
+        "Python",
+        "OpenCV",
+        "NumPy"
+      ]
+    },
+    {
+      "slug": "speech-cepstrum",
+      "tier": 3,
+      "area": "AI & signals",
+      "title": "Pitch and formants of my own voice",
+      "when": "Spring 2025",
+      "course": "Fundamentals of Speech and Language Processing",
+      "grade": 17.4,
+      "details": "I recorded a Persian sentence from Rabiner's speech-processing book in my own voice and wrote MATLAB code that extracts the pitch contour and the formants frame by frame using cepstral analysis.",
+      "tags": [
+        "MATLAB",
+        "Speech processing"
+      ]
+    },
+    {
+      "slug": "signal-audio-coding",
+      "tier": 3,
+      "area": "AI & signals",
+      "title": "Line coding and audio coding",
+      "when": "Spring 2024",
+      "course": "Computer Networks 1",
+      "grade": 20,
+      "details": "Two signal-level projects. First, a bit stream sent as a polar signal through a channel with Gaussian noise, sampled at the middle of each bit, with the bit-error rate measured against signal voltage. Second, a recorded voice processed with amplification, μ-law and A-law companding, PCM and delta modulation.",
+      "tags": [
+        "Python",
+        "NumPy",
+        "Matplotlib"
+      ]
+    },
+    {
+      "slug": "linear-algebra-labs",
+      "tier": 3,
+      "area": "AI & signals",
+      "title": "Linear algebra labs: face shapes and least squares",
+      "when": "Fall 2024",
+      "course": "Linear Algebra",
+      "grade": null,
+      "details": "Python labs applying linear algebra: images as matrices, solving systems and least squares on noisy measurements, and face-landmark analysis. Faces were aligned to a neutral face with affine registration, then SVD / PCA found the main modes of face-shape variation, animated one mode at a time.",
+      "tags": [
+        "Python",
+        "NumPy",
+        "SVD",
+        "PCA"
+      ]
+    },
+    {
+      "slug": "vhdl-designs",
+      "tier": 3,
+      "area": "Hardware & systems",
+      "title": "VHDL designs with testbenches",
+      "when": "Spring 2025",
+      "course": "Computer-Aided Design of Digital Systems",
+      "grade": 19,
+      "details": "VHDL designs simulated in ModelSim with their own testbenches, including a calculator that takes four 8-bit inputs and computes sums, means and variances of the odd and even values, and a counter.",
+      "tags": [
+        "VHDL",
+        "ModelSim",
+        "FPGA"
+      ]
+    },
+    {
+      "slug": "systemc-genetic",
+      "tier": 3,
+      "area": "Hardware & systems",
+      "title": "Genetic algorithm as hardware units in SystemC",
+      "when": "Fall 2023",
+      "course": "Hardware / Software Co-Design",
+      "grade": 17.51,
+      "details": "A genetic algorithm for a knapsack-style problem modelled in SystemC / C++ as separate hardware units: value and weight calculation, fitness evaluation, selection, crossover, mutation and population repair.",
+      "tags": [
+        "SystemC",
+        "C++"
+      ]
+    },
+    {
+      "slug": "avr-assembly",
+      "tier": 3,
+      "area": "Hardware & systems",
+      "title": "AVR assembly programs",
+      "when": "Fall 2023",
+      "course": "Microprocessors and Assembly Language",
+      "grade": 19,
+      "details": "Assembly programs for AVR microcontrollers, for example dividing a 16-bit number by an 8-bit number using only 8-bit registers.",
+      "tags": [
+        "AVR",
+        "Assembly"
+      ]
+    },
+    {
+      "slug": "kernel-modules",
+      "tier": 3,
+      "area": "Hardware & systems",
+      "title": "Linux kernel modules",
+      "when": "Fall 2023",
+      "course": "Operating Systems",
+      "grade": 19,
+      "details": "Loadable Linux kernel modules in C: load and unload hooks that log to the kernel log, and /proc entries that report the jiffies counter and the time elapsed since the module was loaded.",
+      "tags": [
+        "C",
+        "Linux kernel"
+      ]
+    },
+    {
+      "slug": "knights-and-rogues",
+      "tier": 3,
+      "area": "Algorithms & software",
+      "title": "Knights and Rogues: divide and conquer",
+      "when": "Spring 2023",
+      "course": "Algorithm Design",
+      "grade": 19.5,
+      "details": "Among n knights, more than half are honest and the rest may answer anything. The task: identify the knights by asking them about each other. I designed a divide-and-conquer solution based on majority votes, implemented it in Python and explained it in a 10-page report.",
+      "tags": [
+        "Python",
+        "Algorithms"
+      ]
+    },
+    {
+      "slug": "array-interpreter",
+      "tier": 3,
+      "area": "Algorithms & software",
+      "title": "Command interpreter for typed arrays",
+      "when": "Spring 2022",
+      "course": "Advanced Programming",
+      "grade": 17.4,
+      "details": "The first Advanced Programming project: a console program that reads commands to declare arrays of integers, doubles, characters or strings, assign values, change single members and run operations on whole arrays.",
+      "tags": [
+        "Java",
+        "Parsing"
+      ]
+    },
+    {
+      "slug": "ap-homework",
+      "tier": 3,
+      "area": "Algorithms & software",
+      "title": "Object-oriented Java homework",
+      "when": "Spring 2022",
+      "course": "Advanced Programming",
+      "grade": 17.4,
+      "details": "Weekly assignments on object-oriented design: Death Arena (soldiers and guns with inheritance and a console graphics engine), a brick-breaker game model with several brick types, a hospital model, data-access objects that store people as JSON or plain text, and saving a binary search tree to a file.",
+      "tags": [
+        "Java",
+        "OOP",
+        "Inheritance",
+        "File I/O"
+      ]
+    },
+    {
+      "slug": "data-structures",
+      "tier": 3,
+      "area": "Algorithms & software",
+      "title": "Data structures in Java",
+      "when": "Fall 2022",
+      "course": "Data Structures",
+      "grade": 18.5,
+      "details": "Java assignments with written reports: converting infix and prefix expressions to postfix and evaluating them with stacks, a circular queue, and circular linked lists.",
+      "tags": [
+        "Java"
+      ]
+    }
+  ]
+}

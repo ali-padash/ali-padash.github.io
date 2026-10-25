@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChamFlick DE · Seyed Ali Padash Sotoodeh</title>
+<meta name="description" content="An offline Android app for learning German from real books and films: tap any word for meaning, grammar and pronunciation, with every noun coloured by its gender.">
+<meta name="author" content="Seyed Ali Padash Sotoodeh">
+<meta property="og:title" content="ChamFlick DE · Seyed Ali Padash Sotoodeh">
+<meta property="og:description" content="An offline Android app for learning German from real books and films: tap any word for meaning, grammar and pronunciation, with every noun coloured by its gender.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ali-padash.github.io/projects/chamflick.html">
+<link rel="canonical" href="https://ali-padash.github.io/projects/chamflick.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23012D6A'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EAP%3C/text%3E%3C/svg%3E">
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Slab:wght@500;700&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a><header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html"><span class="brand-full">Seyed Ali Padash Sotoodeh</span><span class="brand-short">Padash Sotoodeh</span></a>
+    <nav class="topnav" aria-label="Main">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></g></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg></button>
+    <a class="btn btn-cv" href="../cv.pdf" download="Padash_Sotoodeh_CV.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m-5-5 5 5 5-5M4 20h16"/></svg><span>Download CV</span></a>
+  </div>
+</header>
+<main id="main" class="wrap project">
+  <a class="back" href="../index.html#projects"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6 6-6-6 6-6"/></svg>All projects</a>
+  <header class="project-head">
+    <p class="eyebrow">Featured project</p>
+    <h1>ChamFlick DE</h1>
+    <p class="lead">An offline Android app for learning German from real books and films: tap any word for meaning, grammar and pronunciation, with every noun coloured by its gender.</p>
+    <dl class="facts"><div><dt>When</dt><dd>Aug 2026 – present</dd></div><div><dt>Type</dt><dd>Personal project</dd></div></dl>
+    <ul class="tags"><li>Kotlin</li><li>C++</li><li>Android</li><li>NLP</li><li>OCR</li><li>On-device</li></ul>
+    <div class="project-links"><a class="btn btn-ghost" href="https://ali-padash.github.io/chamflick-showcase/" target="_blank" rel="noopener">Project showcase <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6m0-6-9 9M18 14v6H4V6h6"/></svg></a></div>
+  </header>
+  <figure class="hero"><a href="../img/chamflick/reading.webp" target="_blank" rel="noopener"><img src="../img/chamflick/reading.webp" alt="A page of Der kleine Prinz with its nouns in blue, pink, green and orange" loading="lazy" decoding="async"></a><figcaption>Reading Der kleine Prinz with every noun coloured by gender.</figcaption></figure>
+  <div class="prose">
+    <h2>Overview</h2>
+    <p>Reading German books and watching German films is the best practice, but constant dictionary look-ups break the flow. ChamFlick puts the dictionary inside the page and the subtitles.</p>
+    <h2>What I did</h2>
+    <ul><li>Tap any word in a PDF, EPUB, scanned page or live film subtitle to open a dictionary card with its meaning, grammar and pronunciation. Scanned books are read with OCR.</li><li>Every noun is coloured by gender (der / die / das / plural) in text and subtitles. A sentence parser (spaCy's German parser, reimplemented in C++ to run on the phone) resolves ambiguous words such as Band or Messer, and nouns it is unsure about stay uncoloured instead of being guessed.</li><li>German-specific look-ups: separable verbs are rejoined (in “fügte … hinzu”, a tap on fügte opens hinzufügen) and compound words are split (Apfelbaum → Apfel + Baum).</li><li>Everything runs on the phone: no account and no internet connection.</li></ul>
+    
+    
+  </div>
+  <h2>Gallery</h2><div class="gallery"><figure class="shot"><a href="../img/chamflick/three-genders.webp" target="_blank" rel="noopener"><img src="../img/chamflick/three-genders.webp" alt="Die Band, das Band, der Band: the same word in pink, green and blue" loading="lazy" decoding="async"></a><figcaption>One word, three genders: the parser decides from the sentence.</figcaption></figure><figure class="shot"><a href="../img/chamflick/subtitle-card.webp" target="_blank" rel="noopener"><img src="../img/chamflick/subtitle-card.webp" alt="The film paused with a dictionary card for der Zauberer open over it" loading="lazy" decoding="async"></a><figcaption>Tap a subtitle word and the film waits.</figcaption></figure><figure class="shot"><a href="../img/chamflick/dictionary.webp" target="_blank" rel="noopener"><img src="../img/chamflick/dictionary.webp" alt="A dictionary card for der Apfelbaum, taken apart into Apfel and Baum" loading="lazy" decoding="async"></a><figcaption>Compounds taken apart on the dictionary card.</figcaption></figure><figure class="shot"><a href="../img/chamflick/split-verbs.webp" target="_blank" rel="noopener"><img src="../img/chamflick/split-verbs.webp" alt="In a sentence with fügte … hinzu, a tap on fügte opens the card for hinzufügen" loading="lazy" decoding="async"></a><figcaption>Separable verbs: fügte … hinzu leads to hinzufügen.</figcaption></figure><figure class="shot"><a href="../img/chamflick/scans.webp" target="_blank" rel="noopener"><img src="../img/chamflick/scans.webp" alt="A scanned page of Der Froschkönig with the printed nouns recoloured in the ink itself" loading="lazy" decoding="async"></a><figcaption>Scanned books are read with OCR and recoloured.</figcaption></figure></div>
+  <nav class="pager" aria-label="More projects"><a class="pager-prev" href="thesis-sentiment.html" rel="prev"><span class="pager-label">Previous</span><span class="pager-title">YouTube Comment Sentiment Analysis</span></a><a class="pager-next" href="rahi.html" rel="next"><span class="pager-label">Next</span><span class="pager-title">Rahi: Bus Ticket Reservation System</span></a></nav>
+</main>
+<footer class="footer">
+  <div class="wrap">© 2026 Seyed Ali Padash Sotoodeh</div>
+</footer>
+<script src="../theme.js"></script>
+</body>
+</html>

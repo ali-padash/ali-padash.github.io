@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asphalt Crack Segmentation · Seyed Ali Padash Sotoodeh</title>
+<meta name="description" content="Pixel-level crack detection with a U-Net built from scratch in PyTorch, trained on a class-collected dataset of about 2,100 photos, 50 of them taken and labelled by me.">
+<meta name="author" content="Seyed Ali Padash Sotoodeh">
+<meta property="og:title" content="Asphalt Crack Segmentation · Seyed Ali Padash Sotoodeh">
+<meta property="og:description" content="Pixel-level crack detection with a U-Net built from scratch in PyTorch, trained on a class-collected dataset of about 2,100 photos, 50 of them taken and labelled by me.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ali-padash.github.io/projects/crack-segmentation.html">
+<link rel="canonical" href="https://ali-padash.github.io/projects/crack-segmentation.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23012D6A'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EAP%3C/text%3E%3C/svg%3E">
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Slab:wght@500;700&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a><header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html"><span class="brand-full">Seyed Ali Padash Sotoodeh</span><span class="brand-short">Padash Sotoodeh</span></a>
+    <nav class="topnav" aria-label="Main">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></g></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg></button>
+    <a class="btn btn-cv" href="../cv.pdf" download="Padash_Sotoodeh_CV.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m-5-5 5 5 5-5M4 20h16"/></svg><span>Download CV</span></a>
+  </div>
+</header>
+<main id="main" class="wrap project">
+  <a class="back" href="../index.html#projects"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6 6-6-6 6-6"/></svg>All projects</a>
+  <header class="project-head">
+    <p class="eyebrow">Course project</p>
+    <h1>Asphalt Crack Segmentation</h1>
+    <p class="lead">Pixel-level crack detection with a U-Net built from scratch in PyTorch, trained on a class-collected dataset of about 2,100 photos, 50 of them taken and labelled by me.</p>
+    <dl class="facts"><div><dt>When</dt><dd>Spring 2025</dd></div><div><dt>Course</dt><dd>Fundamentals of Computer Vision</dd></div><div><dt>Course grade</dt><dd>19.9 / 20</dd></div></dl>
+    <ul class="tags"><li>Python</li><li>PyTorch</li><li>OpenCV</li><li>Segmentation</li><li>COCO</li></ul>
+    
+  </header>
+  <figure class="hero"><a href="../img/crack-segmentation/crack-1.webp" target="_blank" rel="noopener"><img src="../img/crack-segmentation/crack-1.webp" alt="Photo of a crack running down grey asphalt and branching at the bottom" loading="lazy" decoding="async" style="object-position:center"></a><figcaption>One of the 50 photos I contributed to the class dataset.</figcaption></figure>
+  <div class="prose">
+    <h2>Overview</h2>
+    <p>Finding thin cracks in road surfaces, pixel by pixel: for every pixel, decide whether it belongs to a crack.</p>
+    <h2>What I did</h2>
+    <ul><li>Photographed 40 cracked and 10 undamaged asphalt surfaces and labelled the cracks as polygons in Roboflow, as my share of a dataset the whole class collected (about 2,100 photos).</li><li>Turned the pooled COCO-format dataset into binary masks and re-split it 70 / 15 / 15 into train, validation and test sets, keeping the share of crack-free images equal in each.</li><li>Built a U-Net-style network in PyTorch from scratch: four encoder levels, a bottleneck and four decoder levels joined by skip connections.</li><li>Trained it for 20 epochs with a combined cross-entropy and Dice loss, and wrote an evaluation that reports IoU and draws the predicted cracks over the photos.</li><li>Wrote augmentation that rotates and scales each photo together with its crack outlines, and a dropout-regularised version of the network.</li></ul>
+    
+    
+  </div>
+  <h2>Gallery</h2><div class="gallery"><figure class="shot"><a href="../img/crack-segmentation/crack-2-label.webp" target="_blank" rel="noopener"><img src="../img/crack-segmentation/crack-2-label.webp" alt="Photo of a branching asphalt crack with its traced label polygon in red" loading="lazy" decoding="async" style="object-position:center"></a><figcaption>My label for one photo: a polygon traced along the crack, including its branch.</figcaption></figure><figure class="shot"><a href="../img/crack-segmentation/crack-3.webp" target="_blank" rel="noopener"><img src="../img/crack-segmentation/crack-3.webp" alt="Photo of a thin crack running diagonally across asphalt" loading="lazy" decoding="async" style="object-position:center"></a><figcaption>Thin cracks are only a few pixels wide.</figcaption></figure></div>
+  <nav class="pager" aria-label="More projects"><a class="pager-prev" href="go-back-n.html" rel="prev"><span class="pager-label">Previous</span><span class="pager-title">Reliable Data Transfer over UDP</span></a><a class="pager-next" href="bus-platform-design.html" rel="next"><span class="pager-label">Next</span><span class="pager-title">Bus Ticketing Platform: Analysis and Design</span></a></nav>
+</main>
+<footer class="footer">
+  <div class="wrap">© 2026 Seyed Ali Padash Sotoodeh</div>
+</footer>
+<script src="../theme.js"></script>
+</body>
+</html>

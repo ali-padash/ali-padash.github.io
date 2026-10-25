@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Persian News Topic Classification · Seyed Ali Padash Sotoodeh</title>
+<meta name="description" content="Classifying about 12,500 Persian news articles into six topics with an n-gram voting ensemble and a TF-IDF neural network.">
+<meta name="author" content="Seyed Ali Padash Sotoodeh">
+<meta property="og:title" content="Persian News Topic Classification · Seyed Ali Padash Sotoodeh">
+<meta property="og:description" content="Classifying about 12,500 Persian news articles into six topics with an n-gram voting ensemble and a TF-IDF neural network.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ali-padash.github.io/projects/news-classification.html">
+<link rel="canonical" href="https://ali-padash.github.io/projects/news-classification.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23012D6A'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EAP%3C/text%3E%3C/svg%3E">
+<meta name="color-scheme" content="light dark">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Slab:wght@500;700&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a><header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html"><span class="brand-full">Seyed Ali Padash Sotoodeh</span><span class="brand-short">Padash Sotoodeh</span></a>
+    <nav class="topnav" aria-label="Main">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Switch between light and dark theme"><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v2.5M12 20v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M1.5 12H4M20 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></g></svg><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg></button>
+    <a class="btn btn-cv" href="../cv.pdf" download="Padash_Sotoodeh_CV.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m-5-5 5 5 5-5M4 20h16"/></svg><span>Download CV</span></a>
+  </div>
+</header>
+<main id="main" class="wrap project">
+  <a class="back" href="../index.html#projects"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6 6-6-6 6-6"/></svg>All projects</a>
+  <header class="project-head">
+    <p class="eyebrow">Course project</p>
+    <h1>Persian News Topic Classification</h1>
+    <p class="lead">Classifying about 12,500 Persian news articles into six topics with an n-gram voting ensemble and a TF-IDF neural network.</p>
+    <dl class="facts"><div><dt>When</dt><dd>Spring 2024</dd></div><div><dt>Course</dt><dd>Artificial Intelligence and Expert Systems</dd></div><div><dt>Course grade</dt><dd>19.89 / 20</dd></div></dl>
+    <ul class="tags"><li>Python</li><li>scikit-learn</li><li>XGBoost</li><li>Keras</li><li>Hazm</li><li>Persian NLP</li></ul>
+    
+  </header>
+  <figure class="hero hero-diagram"><svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" class="diagram" role="img" aria-labelledby="f1-t">
+  <title id="f1-t">Per-topic F1 scores of the voting ensemble on 2,083 held-out articles: international 0.88, politics 0.87, provinces 0.86, economy 0.78, social 0.77, culture, sport and science 0.73; macro average 0.82</title>
+  <text class="d-label" x="20" y="24">F1 per topic · voting ensemble · 2,083 held-out articles</text>
+  <!-- scale: 0 → x=200, 1.0 → x=600 (400 px) -->
+  <g class="d-grid">
+    <line x1="200" y1="40" x2="200" y2="226"/><line x1="300" y1="40" x2="300" y2="226"/>
+    <line x1="400" y1="40" x2="400" y2="226"/><line x1="500" y1="40" x2="500" y2="226"/>
+    <line x1="600" y1="40" x2="600" y2="226"/>
+  </g>
+  <g class="d-small d-muted">
+    <text x="200" y="244" text-anchor="middle">0</text><text x="300" y="244" text-anchor="middle">0.25</text>
+    <text x="400" y="244" text-anchor="middle">0.5</text><text x="500" y="244" text-anchor="middle">0.75</text>
+    <text x="600" y="244" text-anchor="middle">1</text>
+  </g>
+  <g class="d-bars">
+    <text class="d-label" x="190" y="61" text-anchor="end">International</text><rect class="d-bar" x="200" y="46" width="352" height="22" rx="3"/><text class="d-small" x="632" y="61" text-anchor="end">0.88</text>
+    <text class="d-label" x="190" y="91" text-anchor="end">Politics</text><rect class="d-bar" x="200" y="76" width="348" height="22" rx="3"/><text class="d-small" x="632" y="91" text-anchor="end">0.87</text>
+    <text class="d-label" x="190" y="121" text-anchor="end">Provinces</text><rect class="d-bar" x="200" y="106" width="344" height="22" rx="3"/><text class="d-small" x="632" y="121" text-anchor="end">0.86</text>
+    <text class="d-label" x="190" y="151" text-anchor="end">Economy</text><rect class="d-bar" x="200" y="136" width="312" height="22" rx="3"/><text class="d-small" x="632" y="151" text-anchor="end">0.78</text>
+    <text class="d-label" x="190" y="181" text-anchor="end">Social</text><rect class="d-bar" x="200" y="166" width="308" height="22" rx="3"/><text class="d-small" x="632" y="181" text-anchor="end">0.77</text>
+    <text class="d-label" x="190" y="211" text-anchor="end">Culture, sport, science</text><rect class="d-bar" x="200" y="196" width="292" height="22" rx="3"/><text class="d-small" x="632" y="211" text-anchor="end">0.73</text>
+  </g>
+  <line class="d-wire d-dash d-accent-line" x1="528" y1="38" x2="528" y2="226"/>
+  <text class="d-small d-accent-text" x="524" y="36" text-anchor="end">macro 0.82</text>
+</svg>
+</figure>
+  <div class="prose">
+    <h2>Overview</h2>
+    <p>News sites tag their articles with about 100 fine-grained labels. The task: predict an article's topic from its title and text.</p>
+    <h2>What I did</h2>
+    <ul><li>Mapped the roughly 100 site tags onto six topics: social, economy, provinces, international, politics, and culture / sport / science.</li><li>Cleaned Persian text with Hazm (normalisation, tokenisation, stemming, stop-word removal) and stripped HTML entities, links and digits. Titles were given extra weight by repeating them before the body.</li><li>Soft-voting ensemble of SVM, XGBoost and Logistic Regression on 1–3-gram counts.</li><li>A second model: TF-IDF features (7,500 terms, 1–3-grams) feeding a small Keras MLP with dropout and early stopping.</li></ul>
+    <h2>Results</h2><ul class="results"><li>On a held-out 20% split (2,083 articles): 84% accuracy and macro F1 0.82 for the voting ensemble.</li><li>85.1% accuracy (weighted F1 0.846) for the TF-IDF + MLP model.</li><li>Per-topic F1 ranged from 0.73 (culture, sport and science) to 0.88 (international).</li><li>On the instructor's hidden test set of 1,000 articles: 88.7% accuracy, the 2nd-best of 18 submissions.</li></ul>
+    
+  </div>
+  
+  <nav class="pager" aria-label="More projects"><a class="pager-prev" href="rahi.html" rel="prev"><span class="pager-label">Previous</span><span class="pager-title">Rahi: Bus Ticket Reservation System</span></a><a class="pager-next" href="omegle-clone.html" rel="next"><span class="pager-label">Next</span><span class="pager-title">Omegle Clone</span></a></nav>
+</main>
+<footer class="footer">
+  <div class="wrap">© 2026 Seyed Ali Padash Sotoodeh</div>
+</footer>
+<script src="../theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" class="diagram" role="img" aria-labelledby="cpu-t">
+  <title id="cpu-t">Datapath of the 8-bit processor: registers on a shared bus, memory and ROM, ALU, and a hard-wired control unit</title>
+  <!-- common bus -->
+  <line class="d-wire d-strong" x1="60" y1="170" x2="610" y2="170"/>
+  <text class="d-small d-muted" x="52" y="174" text-anchor="end">bus</text>
+  <!-- registers -->
+  <g class="d-regs">
+    <rect class="d-box" x="40"  y="80" width="62" height="48" rx="6"/><text class="d-label" x="71"  y="102" text-anchor="middle">AR</text><text class="d-small" x="71"  y="118" text-anchor="middle">5-bit</text>
+    <rect class="d-box" x="118" y="80" width="62" height="48" rx="6"/><text class="d-label" x="149" y="102" text-anchor="middle">PC</text><text class="d-small" x="149" y="118" text-anchor="middle">5-bit</text>
+    <rect class="d-box" x="196" y="80" width="62" height="48" rx="6"/><text class="d-label" x="227" y="102" text-anchor="middle">DR</text><text class="d-small" x="227" y="118" text-anchor="middle">8-bit</text>
+    <rect class="d-box d-accent" x="274" y="80" width="62" height="48" rx="6"/><text class="d-label" x="305" y="102" text-anchor="middle">AC</text><text class="d-small" x="305" y="118" text-anchor="middle">8-bit</text>
+    <rect class="d-box" x="352" y="80" width="62" height="48" rx="6"/><text class="d-label" x="383" y="102" text-anchor="middle">IR</text><text class="d-small" x="383" y="118" text-anchor="middle">op | addr</text>
+    <rect class="d-box" x="430" y="80" width="62" height="48" rx="6"/><text class="d-label" x="461" y="102" text-anchor="middle">TR</text><text class="d-small" x="461" y="118" text-anchor="middle">8-bit</text>
+    <rect class="d-box" x="508" y="80" width="62" height="48" rx="6"/><text class="d-label" x="539" y="102" text-anchor="middle">OUTR</text><text class="d-small" x="539" y="118" text-anchor="middle">8-bit</text>
+  </g>
+  <g class="d-wire">
+    <line x1="71" y1="128" x2="71" y2="170"/><line x1="149" y1="128" x2="149" y2="170"/><line x1="227" y1="128" x2="227" y2="170"/>
+    <line x1="305" y1="128" x2="305" y2="170"/><line x1="383" y1="128" x2="383" y2="170"/><line x1="461" y1="128" x2="461" y2="170"/>
+    <line x1="539" y1="128" x2="539" y2="170"/>
+  </g>
+  <!-- memory and ROM -->
+  <rect class="d-box" x="40" y="215" width="130" height="50" rx="6"/>
+  <text class="d-label" x="105" y="237" text-anchor="middle">Memory</text><text class="d-small" x="105" y="253" text-anchor="middle">32 × 8 bit</text>
+  <rect class="d-box" x="40" y="282" width="130" height="50" rx="6"/>
+  <text class="d-label" x="105" y="304" text-anchor="middle">ROM</text><text class="d-small" x="105" y="320" text-anchor="middle">program</text>
+  <line class="d-wire" x1="105" y1="170" x2="105" y2="215"/>
+  <line class="d-wire" x1="175" y1="307" x2="200" y2="307"/><line class="d-wire" x1="200" y1="307" x2="200" y2="170"/>
+  <!-- ALU -->
+  <path class="d-box d-accent" d="M232 222 h120 l-20 56 h-80 z"/>
+  <text class="d-label" x="292" y="246" text-anchor="middle">ALU</text>
+  <text class="d-small" x="292" y="262" text-anchor="middle">+ − cmp ≪ ¬ √</text>
+  <line class="d-wire" x1="262" y1="170" x2="262" y2="222"/><line class="d-wire" x1="322" y1="170" x2="322" y2="222"/>
+  <path class="d-wire" d="M292 278 v22 h-8"/>
+  <text class="d-small" x="292" y="316" text-anchor="middle">result → AC</text>
+  <!-- control unit -->
+  <rect class="d-box" x="390" y="210" width="220" height="122" rx="8"/>
+  <text class="d-label" x="500" y="231" text-anchor="middle">Hard-wired control unit</text>
+  <rect class="d-chip" x="400" y="244" width="98" height="30" rx="4"/><text class="d-small" x="449" y="263" text-anchor="middle">counter → T0–T5</text>
+  <rect class="d-chip" x="504" y="244" width="100" height="30" rx="4"/><text class="d-small" x="554" y="263" text-anchor="middle">opcode → D0–D7</text>
+  <rect class="d-chip" x="400" y="286" width="204" height="32" rx="4"/><text class="d-small" x="500" y="306" text-anchor="middle">gates → load / clear / increment</text>
+  <line class="d-wire d-dash" x1="383" y1="128" x2="383" y2="148"/><path class="d-wire d-dash" d="M383 148 h175 v62"/>
+</svg>
